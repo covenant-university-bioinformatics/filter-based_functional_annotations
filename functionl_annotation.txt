@@ -1,0 +1,21 @@
+1	948921	948921	T	C
+1	1404001	1404001	G	T
+1	5935162	5935162	A	T
+1	162736463	162736463	C	T
+1	84875173	84875173	C	T
+1	13211293	13211294	TC	-
+1	11403596	11403596	-	AT
+1	105492231	105492231	A	ATAAA
+1	67705958	67705958	G	A
+2	234183368	234183368	A	G
+16	50745926	50745926	C	T
+16	50756540	50756540	G	C
+16	50763778	50763778	-	C
+13	20763686	20763686	G	-
+13	20797176	21105944	0	-
+8	8887543	8887543	A	T
+8       8887539 8887539 A       T	comments: a mutation that results in premature stop codon
+8       8887536 8887537 AG      GATT	comments: a mutation that creates a stop codon 2 amino acids downstream
+8       8887540 8887540 G       GGAA	comments: a mutation that results in insertion of a new amino acid
+5       1295288 1295288 G       A	comments: a variant upstream of transcriptional start site
+chr14   95602958        95602958        A       C	comments: a variant that affects splicing of UTR regions

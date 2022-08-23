@@ -1,0 +1,32 @@
+## build
+
+docker build -t functional_annotation .
+
+#parameters
+input="/media/yagoubali/bioinfo2/CADD/docker/functionl_annotation.txt"
+bindir="/media/yagoubali/bioinfo2/annovar"
+db="/media/yagoubali/bioinfo2/annovar/humandb"
+outdir="/media/yagoubali/bioinfo2/CADD/docker/output_docker"
+
+## Run
+
+docker run --rm -it --name testing -v ${db}:/db -v ${bindir}:/annovar -v ${input}:/app/input.txt  -v ${outdir}:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir GWAVA 
+
+docker run --rm -it --name testing -v ${db}:/db -v ${bindir}:/annovar -v ${input}:/app/input.txt  -v ${outdir}:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir DANN
+
+docker run --rm -it --name testing -v ${db}:/db -v ${bindir}:/annovar -v ${input}:/app/input.txt  -v ${outdir}:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir GERP
+
+docker run --rm -it --name testing -v ${db}:/db -v ${bindir}:/annovar -v ${input}:/app/input.txt  -v ${outdir}:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir  EIGEN
+
+
+
+
+### Download annovar databases
+perl annotate_variation.pl -buildver hg19 -downdb -webfrom  annovar cadd humandb/
+perl annotate_variation.pl -buildver hg19 -downdb -webfrom  annovar dann humandb/
+perl annotate_variation.pl -buildver hg19 -downdb -webfrom  annovar ljb23_gerp++ humandb/
+perl annotate_variation.pl -buildver hg19 -downdb -webfrom  annovar eigen humandb/
+perl annotate_variation.pl -buildver hg19 -downdb -webfrom  annovar gwava humandb/
+
+
+
