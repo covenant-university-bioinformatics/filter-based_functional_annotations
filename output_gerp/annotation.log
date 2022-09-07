@@ -1,0 +1,12 @@
+ANNOVAR Version:
+	$Date: 2020-06-07 23:56:37 -0400 (Sun,  7 Jun 2020) $
+ANNOVAR Information:
+	For questions, comments, documentation, bug reports and program update, please visit http://www.openbioinformatics.org/annovar/
+ANNOVAR Command:
+	/annovar/annotate_variation.pl /app/input.txt /db/ -filter -dbtype ljb23_gerp++ -buildver hg19 -out /home/outdir/annotation
+ANNOVAR Started:
+	Wed Aug 31 14:27:00 2022
+NOTICE: Output file with variants matching filtering criteria is written to /home/outdir/annotation.hg19_ljb23_gerp++_dropped, and output file with other variants is written to /home/outdir/annotation.hg19_ljb23_gerp++_filtered
+NOTICE: Processing next batch with 21 unique variants in 21 input lines
+NOTICE: Database index loaded. Total number of bins is 194631 and the number of bins to be scanned is 11
+NOTICE: Scanning filter database /db/hg19_ljb23_gerp++.txt...Done

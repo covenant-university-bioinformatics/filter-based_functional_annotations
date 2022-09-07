@@ -3,9 +3,9 @@
 set -x;
 gwas_summary=$1
 outdir=$2
-annotaion_type=$3 ##{CADD, GWAVA, DANN, GERP, EIGEN}
-bindir="/annovar" ## mount volume
-db="/db"  ## mount volume
+annotaion_type=$3 ##{CADD, GWAVA, DANN, GERP, EIGEN} # CADD Not included
+bindir="/annovar" ## mount volume # folder with the annovar binaries
+db="/db"  ## mount volume # humandb database
 
 if [ ${annotaion_type} = 'CADD' ]; then
 perl ${bindir}/annotate_variation.pl ${gwas_summary} ${db}/ -filter -dbtype cadd -buildver hg19 -out ${outdir}/annotation

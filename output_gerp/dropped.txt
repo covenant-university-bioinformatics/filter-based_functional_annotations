@@ -1,0 +1,7 @@
+ljb23_gerp++	4.93	1	5935162	5935162	A	T
+ljb23_gerp++	5.19	1	67705958	67705958	G	A
+ljb23_gerp++	3.66	16	50745926	50745926	C	T
+ljb23_gerp++	5.91	16	50756540	50756540	G	C
+ljb23_gerp++	-11.4	2	234183368	234183368	A	G
+ljb23_gerp++	5.89	8       8887539 8887539 A       T	comments: a mutation that results in premature stop codon
+ljb23_gerp++	4.67	8	8887543	8887543	A	T

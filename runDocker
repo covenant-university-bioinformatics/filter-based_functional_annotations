@@ -9,10 +9,15 @@ db="/media/yagoubali/bioinfo2/annovar/humandb"
 outdir="/media/yagoubali/bioinfo2/CADD/docker/output_docker"
 
 ## Run
+/run/desktop/mnt/host/c/daref/Users/Documents/NodeBackend/filter-based_functional_annotations/functionl_annotation.txt
+/run/desktop/mnt/host/d/annovar
+/run/desktop/mnt/host/d/annovar/humandb
+/run/desktop/mnt/host/c/Users/daref/Documents/NodeBackend/filter-based_functional_annotations/output
 
-docker run --rm -it --name testing -v ${db}:/db -v ${bindir}:/annovar -v ${input}:/app/input.txt  -v ${outdir}:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir GWAVA 
+docker run --rm -it --name testing -v /run/desktop/mnt/host/d/annovar/humandb:/db -v /run/desktop/mnt/host/d/annovar:/annovar -v /run/desktop/mnt/host/c/Users/daref/Documents/NodeBackend/filter-based_functional_annotations/functionl_annotation.txt:/app/input.txt  -v /run/desktop/mnt/host/c/Users/daref/Documents/NodeBackend/filter-based_functional_annotations/output:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir GWAVA
+docker run --rm -it --name testing -v /run/desktop/mnt/host/d/annovar/humandb:/db -v /run/desktop/mnt/host/d/annovar:/annovar -v /run/desktop/mnt/host/c/Users/daref/Documents/NodeBackend/filter-based_functional_annotations/functionl_annotation.txt:/app/input.txt  -v /run/desktop/mnt/host/c/Users/daref/Documents/NodeBackend/filter-based_functional_annotations/output_gerp:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir GERP
 
-docker run --rm -it --name testing -v ${db}:/db -v ${bindir}:/annovar -v ${input}:/app/input.txt  -v ${outdir}:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir DANN
+docker run --rm -it --name testing -v /run/desktop/mnt/host/c/daref/Downloads/annovar/humandb:/db -v ${bindir}:/annovar -v ${input}:/app/input.txt  -v ${outdir}:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir DANN
 
 docker run --rm -it --name testing -v ${db}:/db -v ${bindir}:/annovar -v ${input}:/app/input.txt  -v ${outdir}:/home/outdir -v /app/scripts functional_annotation  bash /app/scripts/script.sh /app/input.txt /home/outdir GERP
 
