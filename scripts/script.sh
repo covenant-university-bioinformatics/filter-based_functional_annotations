@@ -28,16 +28,32 @@ perl ${bindir}/annotate_variation.pl ${gwas_summary} ${db}/ -filter -dbtype eige
 fi
 
 if [ -f ${outdir}/annotation*_filtered ]; then
-    mv ${outdir}/annotation*_filtered ${outdir}/filtered.txt
+      mv ${outdir}/annotation*_filtered ${outdir}/filtered2.txt
+      sed -i 's/ \+/\t/g' ${outdir}/filtered2.txt
+      touch ${outdir}/filtered.txt
+      echo -e "Chr\tStart\tEnd\tRef_Allele\tAlt_Allele" > ${outdir}/filtered.txt
+      cut -d$'\t' -f1,2,3,4,5 ${outdir}/filtered2.txt >> ${outdir}/filtered.txt
+      sed -i 's/ \+/\t/g' ${outdir}/filtered.txt
+      rm ${outdir}/filtered2.txt
 else
    touch  ${outdir}/filtered.txt  
+   echo -e "Chr\tStart\tEnd\tRef_Allele\tAlt_Allele" > ${outdir}/filtered.txt
+
 fi
 
 
 if [ -f ${outdir}/annotation*_dropped ]; then
-    mv ${outdir}/annotation*_dropped ${outdir}/dropped.txt
+     mv ${outdir}/annotation*_dropped ${outdir}/dropped2.txt
+     sed -i 's/ \+/\t/g' ${outdir}/dropped2.txt
+     touch ${outdir}/dropped.txt
+     echo -e "Annotation\tScore\tChr\tStart\tEnd\tRef_Allele\tAlt_Allele" > ${outdir}/dropped.txt
+     cut -d$'\t' -f1,2,3,4,5,6,7 ${outdir}/dropped2.txt >> ${outdir}/dropped.txt
+     sed  -i 's/ \+/\t/g' ${outdir}/dropped.txt
+     rm ${outdir}/dropped2.txt
 else
-   touch  ${outdir}/dropped.txt  
+   touch  ${outdir}/dropped.txt 
+   echo -e "Annotation\tScore\tChr\tStart\tEnd\tRef_Allele\tAlt_Allele" > ${outdir}/dropped.txt
+ 
 fi
 
 ## databases, https://www.openbioinformatics.org/annovar/annovar_download.html
