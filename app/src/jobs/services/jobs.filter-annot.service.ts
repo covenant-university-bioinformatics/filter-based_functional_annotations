@@ -55,8 +55,15 @@ export class JobsFilterAnnotService {
 
       const filepath = createJobDto.useTest === 'true' ? testPath : file.path;
 
+      // console.log(filepath);
+
+      let fileSize;
+
       //determine if it will be a long job
-      const fileSize = await fileSizeMb(filepath);
+      fileSize = await fileSizeMb(filepath);
+
+
+      // console.log("Here after");
 
       const longJob = fileSize > 100;
 
@@ -130,6 +137,8 @@ export class JobsFilterAnnotService {
         jobId: newJob.id,
       };
     } catch (e) {
+      console.log("In catch");
+      console.log(e);
       if (e.code === 11000) {
         throw new ConflictException('Duplicate job name not allowed');
       }
